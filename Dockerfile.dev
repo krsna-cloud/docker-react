@@ -9,5 +9,5 @@ RUN npm install
 RUN chmod -R 775 /app
 RUN chown -R node:root /app
 USER 1000
-
+COPY . .
 CMD ["npm","run","start"]

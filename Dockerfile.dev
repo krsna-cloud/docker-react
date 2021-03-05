@@ -1,0 +1,13 @@
+# dev mode
+FROM node:15.11-alpine3.11
+
+RUN adduser node root
+WORKDIR '/app'
+COPY package.json .
+
+RUN npm install
+RUN chmod -R 775 /app
+RUN chown -R node:root /app
+USER 1000
+
+CMD ["npm","run","start"]
